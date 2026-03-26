@@ -16,20 +16,21 @@ The Café Delivery Robot system is an autonomous delivery system for a Cafe envi
 ┌─────────────────────────────────────────────────────────┐
 │                    ROS2 Node Graph                      │
 │                                                         │
-│  [order_robot]───────/order──────────────────────┐      │
+│  [order_robot]──┐────/order──────────────────────┐      │
+│                 │                                ▼      │
+│                 │────/confirm────────────────────┐      │  
+│                 │                                ▼      │ 
+│                 │────/cancel─────────────────────┐      │
 │                                                  ▼      │
-│  [confirmation_node]──/confirm     ──────────────┐      │  
-│                                                  ▼      │ 
-│                                     [order_subscriber]  │
+│                                    [order_subscriber]   │      
 │                                                  │      │
-│  CLI / buttons ──/cancel      ───────────────────┘      │
-│                                                  │      │
-│                        /awaiting_confirm◄────────┘      │
-│                                                         │
+│        ────────────────/awaiting_confirm◄────────┘      │
+│        │                                                │
+│        ▼                                                │
 │  [order_robot] ──NavigateToPose──►   [Nav2 Stack]       │
-│                                        │                │
-│                                   [Cartographer]        │
-│                                        │                │
+│                                           │             │
+│                                     [Cartographer]      │
+│                                           │             │
 │                                   [TurtleBot3 Waffle]   │
 └─────────────────────────────────────────────────────────┘
 ```
