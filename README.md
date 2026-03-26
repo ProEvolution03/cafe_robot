@@ -181,8 +181,9 @@ The mapping can be done in 2 ways :
 #2. Teleop Keyboard in a 3rd Terminal - Use the Teleop keyboard to manually move the robot around for mapping.
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
-
 Save the map in the workspace directory and get its path. 
+
+# NOTE : Map already created, saved and uploaded in the repository.
 
 ### Run Nodes Individually
 
@@ -197,7 +198,7 @@ source install/setup.bash
 ros2 launch cafe_robot cafe_world.launch.py
 ```
 
-# II. Running RViz2 using the map obtained (I have used the path used in my directory)
+# II. Running RViz2 using the map obtained
 
 ```bash
 # In Terminal 2
@@ -205,7 +206,7 @@ ros2 launch cafe_robot cafe_world.launch.py
 cd ~/ros2_ws
 colcon build --packages-select cafe_robot
 source install/setup.bash
-ros2 launch turtlebot3_navigation2 navigation2.launch.py   use_sim_time:=True   map:=/home/aakash_sivakumar/ros2_ws/src/cafe_map.yaml
+ros2 launch turtlebot3_navigation2 navigation2.launch.py   use_sim_time:=True   map:=$YOUR_PATH/cafe_map.yaml
 ```
 
 # III. Run the nodes separately, the order_robot and order_subscriber nodes in separate terminals.
