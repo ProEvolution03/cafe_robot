@@ -53,7 +53,7 @@ The Café Delivery Robot system is an autonomous delivery system for a Cafe envi
 
 ---
 
-## 3. State Machine
+## 3. Working Process
 
 ```
             ┌─────────────────────────────┐
