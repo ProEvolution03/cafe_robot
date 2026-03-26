@@ -154,7 +154,7 @@ export TURTLEBOT3_MODEL=waffle
 
 ```bash
 cd ~/ros2_ws/src
-git clone ""
+git clone https://github.com/ProEvolution03/cafe_robot.git
 cd ~/ros2_ws
 colcon build --packages-select cafe_robot
 source install/setup.bash
