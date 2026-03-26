@@ -59,30 +59,30 @@ The Café Delivery Robot system is an autonomous delivery system for a Cafe envi
             ┌─────────────────────────────┐
             │           IDLE              │◄──────────────────┐
             └────────────┬────────────────┘                   │
-                         │ /order received                     │
-                         ▼                                     │
+                         │ /order received                    │
+                         ▼                                    │
             ┌─────────────────────────────┐                   │
             │      GOING_TO_KITCHEN       │                   │
             └────────────┬────────────────┘                   │
-                         │ arrived                             │
-                         ▼                                     │
+                         │ arrived                            │
+                         ▼                                    │
             ┌─────────────────────────────┐                   │
-            │      WAITING_KITCHEN        │──timeout──► go home
+            │      WAITING_KITCHEN        │──timeout──────► go home
             └────────────┬────────────────┘                   │
-                         │ confirmed                           │
-                         ▼                                     │
+                         │ confirmed                          │
+                         ▼                                    │
             ┌─────────────────────────────┐                   │
             │       GOING_TO_TABLE        │◄──────────────┐   │
             └────────────┬────────────────┘               │   │
-                         │ arrived                         │   │
-                         ▼                                 │   │
+                         │ arrived                        │   │
+                         ▼                                │   │
             ┌─────────────────────────────┐               │   │
             │       WAITING_TABLE         │──timeout──►(skip/kitchen)
             └────────────┬────────────────┘               │   │
-                         │ confirmed                       │   │
-                         │ more tables? ──────────────────┘   │
-                         │ no more tables                      │
-                         ▼                                     │
+                         │ confirmed                      │   │
+                         │ more tables? ─ attend tables ──┐   │
+                         │ no more tables ────────────────┘   │
+                         ▼                                    │
             ┌─────────────────────────────┐                   │
             │         GOING_HOME          │───────────────────┘
             └─────────────────────────────┘
